@@ -1,0 +1,13 @@
+---
+- name: Install nginx and uWSGI for a Python web application (pyweb)
+  hosts: ss-devops-2
+  gather_facts: False
+  become: yes
+  become_user: root
+  roles:
+     - install_Debian_Ubuntu
+     - setup_venv_app
+     - patch_config_Debian_Ubuntu
+     - configure_nginx_uwsgi
+     - create_service_Debian_Ubuntu
+     - start_services
